@@ -1,0 +1,562 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>T SIR</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <img src="{% static 'images/T_SIR.jpeg' %}" alt="" width="100" height="50">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item"> 
+                  <a class="nav-link" href="{% url 'tableaux_C' %}"> Driver</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html"> Services </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Historique.html"> Historique</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section ">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-7 ">
+            <div class="box">
+              <div class="detail-box">
+                <h4>
+                  Welcome to T SIR
+                </h4>
+                <h1>
+                  FAST,SAFE & IN TIME
+                </h1>
+              </div>
+
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="img-box">
+                      <img src="{% static 'images/first.jpg' %}" alt="">
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="img-box">
+                      <img src="{% static 'images/second.png' %}" alt="">
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="img-box">
+                      <img src="{% static 'images/slider-img.png' %}" alt="">
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="img-box">
+                      <img src="{% static 'images/first.jpg' %}" alt="">
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="img-box">
+                      <img src="{% static 'images/second.png' %}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-5 ">
+            <div class="slider_form">
+              <h4>
+                Get your Ride
+              </h4>
+              <form action="{% url 'addrid' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="Pick" placeholder="Pick Up Location">
+                <input type="text" name="Drop" placeholder="Drop Location">
+                <input type="text" name="Price"  placeholder="Price MAD ">
+                <div class="btm_input">
+                  <button>Book Now</button>
+                </div>
+              </form>
+
+              <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1692002.5278217604!2d-7.540184527164399!3d34.07739772726902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda0a548e6dd5ed7%3A0x26653c7bdfd060b2!2zUmFiYXQtU2Fsw6ktS8Opbml0cmE!5e0!3m2!1sen!2sma!4v1719867269465!5m2!1sen!2sma" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-lg-2 offset-md-1">
+          <div class="detail-box">
+            <h2>
+              About Us <br>
+            </h2>
+            <p>
+              Welcome to T SIR. Our mission is to simplify our customers' lives by offering an intuitive and efficient platform for booking taxi rides in just a few clicks.<br>
+              With T SIR, forget about the hassle of phone calls or long waits, and enjoy a fast and reliable service. We are committed to providing an optimal user experience by offering a user-friendly application that meets everyone's needs. Whether you need a taxi for your daily commutes, professional appointments, or night outings, T SIR is here for you. Join the T SIR community and discover a new way to travel with peace of mind.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="{% static 'images/about-img.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Our Services<br>
+          Taxi
+        </h2>
+        <p>
+          Book your taxi quickly and easily. Our application provides an efficient and convenient taxi booking experience.
+        </p>
+      </div>
+      <div class="service_container">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'images/s-1.png' %}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Immediate Booking
+            </h5>
+            <p>
+              Get a taxi right away with our immediate booking option.
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'images/s-2.png' %}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Advance Booking
+            </h5>
+            <p>
+              Plan your rides in advance with our easy-to-use advance booking feature.
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'images/s-3.png' %}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Reliable Service
+            </h5>
+            <p>
+              Enjoy peace of mind with our reliable and professional drivers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  <!-- Historique section -->
+
+  <section class="Historique_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-lg-2 offset-md-1">
+          <div class="detail-box">
+            <h2>
+              Our History <br>
+            </h2>
+            <p>
+              Discover the history of our company. Since our inception, we have been committed to providing an exceptional travel experience for our customers.<br>
+              From the beginning, T SIR was designed to offer an innovative and practical solution for taxi booking, combining modern technology with the highest standards of service.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="{% static 'images/historique-img.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end Historique section -->
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Customer Reviews
+        </h2>
+        <p>
+          Hear what our satisfied customers have to say about their experience with T SIR.
+        </p>
+      </div>
+      <div class="carousel-wrap row">
+        <div class="owl-carousel client_owl-carousel">
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <h4>
+                  Lisa
+                </h4>
+                <p>
+                  "T SIR offers an exceptional service! Booking a taxi has never been so easy and fast. I highly recommend T SIR for a reliable and pleasant experience."
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="{% static 'images/client.png' %}" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <h4>
+                  John
+                </h4>
+                <p>
+                  "I have used T SIR several times and I am very satisfied with the service. The drivers are always punctual and friendly. It's the best way to travel in the city!"
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="{% static 'images/client.png' %}" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <h4>
+                  Anna
+                </h4>
+                <p>
+                  "T SIR has completely transformed the way I book taxis. The application is very user-friendly and the service is excellent. I am a loyal customer and I wouldn't use any other service!"
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="{% static 'images/client.png' %}" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Contact Us
+        </h2>
+      </div>
+      <div class="layout_padding2-top">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="contact_form-container">
+              <form action="">
+                <div>
+                  <input type="text" placeholder="Full Name">
+                </div>
+                <div>
+                  <input type="email" placeholder="Email">
+                </div>
+                <div>
+                  <input type="text" placeholder="Phone Number">
+                </div>
+                <div>
+                  <input type="text" placeholder="Message">
+                </div>
+                <div class="mt-5">
+                  <button type="submit">
+                    Send
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+  <!-- app section -->
+
+  <section class="app_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-5">
+          <div class="detail-box">
+            <h2>
+              Download the T SIR App
+            </h2>
+            <p>
+              Get the T SIR app and book your taxi rides even faster. Available on the App Store and Google Play.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-7 offset-md-0 offset-lg-2">
+          <div class="img-box">
+            <img src="{% static 'images/app-img.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end app section -->
+
+  <!-- why section -->
+
+  <section class="why_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Why Choose Us
+        </h2>
+        <p>
+          Discover the benefits of booking your taxi with T SIR.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/w-1.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Convenient
+              </h5>
+              <p>
+                Book your taxi in just a few clicks with our easy-to-use app.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/w-2.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Reliable
+              </h5>
+              <p>
+                Count on our professional drivers to get you to your destination safely and on time.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/w-3.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Affordable
+              </h5>
+              <p>
+                Enjoy competitive rates and transparent pricing with no hidden fees.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end why section -->
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="info_logo">
+        <h2>
+          T SIR
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              About Us
+            </h5>
+            <p>
+              Learn more about T SIR and our commitment to providing an exceptional taxi booking experience.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              Contact Us
+            </h5>
+            <p>
+              Get in touch with our support team for any questions or assistance.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              Legal Information
+            </h5>
+            <p>
+              Read our terms of service and privacy policy.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              Social Media
+            </h5>
+            <div class="social_box">
+              <a href="#">
+                <img src="{% static 'images/fb.png' %}" alt="">
+              </a>
+              <a href="#">
+                <img src="{% static 'images/twitter.png' %}" alt="">
+              </a>
+              <a href="#">
+                <img src="{% static 'images/linkedin.png' %}" alt="">
+              </a>
+              <a href="#">
+                <img src="{% static 'images/instagram.png' %}" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; 2023 All Rights Reserved. Designed by <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- end footer section -->
+  <!-- jQery -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- popper js -->
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <!-- bootstrap js -->
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- owl slider -->
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <!-- custom js -->
+  <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>

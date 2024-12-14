@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>ridestatus</title>
+     <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+    
+</head>
+
+<body>
+
+    <header class="header_section_first">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <img src="{% static 'images/T_SIR.jpeg' %}" alt="T SIR Logo" width="100" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Historique.html">Historique</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+    <div class="info_frame">
+        <h3>Client reservation</h3>
+        <p><strong>Pick Up Location:</strong>{{rid.PickUpLocation}}</p>
+        <p><strong>Drop Location:</strong>{{rid.DropLocation}}</p>
+        <p><strong>Price: </strong>{{rid.PriceMAD}}</p>
+        <p><strong>etat:</strong>{{rid.status}}</p>
+    </div>
+
+    <section class="info_section layout_padding-top layout_padding2-bottom">
+        <div class="container">
+          <div class="box">
+            <div class="info_form">
+              <h4>Enter your email to get all the news</h4>
+              <form action="">
+                <input type="text" placeholder="Enter your email">
+                <div class="d-flex justify-content-end">
+                  <button>Submit</button>
+                </div>
+              </form>
+            </div>
+            <div class="info_links">
+              <ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="deconnexion.html">Deconnexion</a>
+                </li>
+              </ul>
+            </div>
+            <div class="info_social">
+              <div>
+                <a href="#">
+                  <img src="{% static 'images/fb.png' %}" alt="Facebook">
+                </a>
+              </div>
+              <div>
+                <a href="#">
+                  <img src="{% static 'images/twitter.png' %}" alt="Twitter">
+                </a>
+              </div>
+              <div>
+                <a href="#">
+                  <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn">
+                </a>
+              </div>
+              <div>
+                <a href="#">
+                  <img src="{% static 'images/instagram.png' %}" alt="Instagram">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end info section -->
+    
+      <!-- footer section -->
+      <section class="container-fluid footer_section">
+        <div class="container">
+          <p>&copy; 2024 All Rights Reserved By T SIR</p>
+        </div>
+      </section>
+</body>
+</html>
