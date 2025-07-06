@@ -27,22 +27,22 @@ Elle a été développée avec **Python**, **Django**, **HTML/CSS/JS** et **SQLi
 ### 🔐 Authentification
 
 <div align="center">
-  <img src="img/1.png" alt="Page Sign In" width="45%"/>
-  <img src="img/2.png" alt="Page Sign Up" width="45%"/>
+  <img src="yassineXImane/img/1.png" alt="Page Sign In" width="45%"/>
+  <img src="yassineXImane/img/2.png" alt="Page Sign Up" width="45%"/>
 </div>
 
 ### 🧑‍💼 Interfaces Client & Conducteur
 
 <div align="center">
-  <img src="img/3.png" alt="Accueil Client" width="45%"/>
-  <img src="img/4.png" alt="Création Profil Conducteur" width="45%"/>
+  <img src="yassineXImane/img/3.png" alt="Accueil Client" width="45%"/>
+  <img src="yassineXImane/img/4.png" alt="Création Profil Conducteur" width="45%"/>
 </div>
 
 ### 📍 Gestion de course & erreurs
 
 <div align="center">
-  <img src="img/5.png" alt="Liste des Courses" width="45%"/>
-  <img src="img/6.png" alt="Page d’Erreur" width="45%"/>
+  <img src="yassineXImane/img/5.png" alt="Liste des Courses" width="45%"/>
+  <img src="yassineXImane/img/6.png" alt="Page d’Erreur" width="45%"/>
 </div>
 
 
@@ -55,5 +55,5 @@ Elle a été développée avec **Python**, **Django**, **HTML/CSS/JS** et **SQLi
 ```bash
 git clone https://github.com/ton-utilisateur/t-sir.git
 cd t-sir
-
+```
 ### ✨ Made with 💻 by JOSKA
